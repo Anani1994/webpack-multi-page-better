@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const resolve = dir => {
 	return path.join(__dirname,dir);
@@ -14,6 +15,12 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+		        test: /\.vue$/,
+		        use: [
+	            	'vue-loader'
+		        ]
+		    },
 			{
 		        test: /\.css$/,
 		        use: [
@@ -87,6 +94,7 @@ module.exports = {
 	        jQuery: 'jquery',
 	        'window.jQuery': 'jquery',
 	        Popper: ['popper.js', 'default'],
-      	})
+      	}),
+      	new VueLoaderPlugin(),
 	],
 };
