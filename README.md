@@ -11,7 +11,7 @@ Multi page development environment based on webpack
 yarn install
 
 # serve with hot reload at 192.168.1.6:9000
-yarn run dev
+yarn run dev // Change 192.168.1.6 to your computer's IP address
 
 # build
 yarn run build
